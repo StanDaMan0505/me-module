@@ -7,14 +7,14 @@
     # Kopie der Datei erstellen
     $a = Get-Date -Format yyyy-MM-dd_HHmmss
     if (Test-Path $filename){
-        Copy-Item -Path $filename -Destination "C:\Users\DI125\Documents\Dokumentationen\Archiv\Datenbanken-$a.xlsx" -Force
+        Copy-Item -Path $filename -Destination "$env:USERPROFILE\Documents\Dokumentationen\Archiv\Datenbanken-$a.xlsx" -Force
     }
 
     if(Test-Path "V:\ORG\IOS\Application Operations\Datenbanken & Middleware\Microsoft\SQL\Dokumente\Inventar\Archiv"){
         Copy-Item -Path $filename -Destination "V:\ORG\IOS\Application Operations\Datenbanken & Middleware\Microsoft\SQL\Dokumente\Inventar\Archiv\Datenbanken-$a.xlsx" -Force
     }else
     {
-        Write-Host "Kann Archiv nicht finden. Pfad existier nicht" -ForegroundColor Yellow
+        Write-Host "Kann Archiv nicht finden. Pfad existiert nicht" -ForegroundColor Yellow
     }
 
 
